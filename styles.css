@@ -1,0 +1,114 @@
+.ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #000;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+}
+
+.ag-courses_box {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.ag-courses_item {
+    flex-basis: calc(33.33333% - 30px);
+    margin: 0 15px 30px;
+    overflow: hidden;
+    border-radius: 28px;
+
+    /* Transition pour l'animation globale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation au survol : agrandit légèrement la carte */
+.ag-courses_item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ag-courses-item_content {
+    display: block;
+    padding: 30px 20px;
+    background-color: #121212;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #ee5f0c;
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+    border-radius: 50%;
+
+    /* Transition pour l'animation du cercle */
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+/* Animation au survol : agrandit le cercle */
+.ag-courses_item:hover .ag-courses-item_bg {
+    transform: scale(10);
+}
+
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #27f153;
+}
+
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e40602;
+}
+
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #f6e425;
+}
+
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+    background-color: #cc017b;
+}
+
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+    background-color: #1dbaee;
+}
+
+@media only screen and (max-width: 979px) {
+    .ag-courses_item {
+        flex-basis: calc(50% - 30px);
+    }
+    .ag-courses-item_title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .ag-courses_item {
+        flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+    }
+    .ag-courses-item_content {
+        padding: 22px 40px;
+    }
+}
